@@ -1,4 +1,12 @@
 {
+  "../components/Hello.js": [
+    {
+      "id": "./components/Hello.js",
+      "name": "./components/Hello.js",
+      "file": "static/chunks/1.js",
+      "publicPath": "static/chunks/1.js"
+    }
+  ],
   "./noop": [
     {
       "id": "./node_modules/next/dist/client/noop.js",

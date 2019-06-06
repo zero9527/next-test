@@ -1,8 +1,26 @@
+import React, { useEffect } from 'react';
+import Router, { withRouter } from 'next/router';
 import Layout from '../components/Layout';
-import { withRouter } from 'next/router';
 import Markdown from 'react-markdown';
 
-export default withRouter(props => {
+const IndexPage = props => {
+  console.log('index');
+
+  useEffect(() => {
+    console.log('load');
+    // 路由拦截
+    Router.beforePopState(({ url, as, options }) => {
+      console.log('url: ', url);
+      console.log('as: ', as);
+      console.log('options: ', options);
+      
+      if (as === '/about') {
+        console.log('about');
+      }
+      return false;
+    });
+  });
+
   return (
     <Layout>
       <h1>{props.router.query.title}</h1>
@@ -45,4 +63,6 @@ export default withRouter(props => {
     `}</style>
     </Layout>
   );
-});
+};
+
+export default withRouter(IndexPage);

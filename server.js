@@ -17,7 +17,20 @@ app
       app.render(req, res, actualPage, queryParams);
     });
 
+    // 匹配URL为 `/about/:id` 的路由，添加 `params 参数`，然后渲染 `/about` 对应的 `page/about.js` 文件
+    server.get('/about/:id', (req, res) => {
+      app.render(req, res, '/about', {
+        id: req.params.id
+      })
+    });
+
     server.get('*', (req, res) =>{
+      // 设置一个资源前缀
+      if (req.headers.host === 'my-app.com') {
+        app.setAssetPrefix('http://cdn.com/myapp');
+      } else {
+        app.setAssetPrefix('');
+      }
       return handle(req, res);
     });
 
