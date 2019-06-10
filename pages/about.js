@@ -1,5 +1,7 @@
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
+import { withRouter } from 'next/router';
+import { useEffect } from 'react';
 import Layout from '../components/Layout';
 
 const AboutContent = () => <p>This is the about page</p>;
@@ -11,7 +13,12 @@ const Hello = dynamic(
   }
 );
 
-export default function About() {
+function About(props) {
+
+  // useEffect(() => {
+  //   console.log(props.router);
+  // }, []);
+
   return (
     <Layout>
       <Head>
@@ -27,3 +34,5 @@ export default function About() {
 //   console.log('context: ', context);
 //   return {};
 // }
+
+export default withRouter(About);

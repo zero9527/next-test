@@ -12,7 +12,7 @@ const Header = props => {
   useEffect(() => {
     props.router.prefetch('/about');
   }, []);
-  
+
   return (
     <div>
       <Head>
@@ -24,6 +24,9 @@ const Header = props => {
       </Link>
       <Link href="/about?id=ahb" as="/about/ahb">
         <a style={linkStyle}>About</a>
+      </Link>
+      <Link href="/detail?id=123" as="/detail/123">
+        <a style={linkStyle}>Detail</a>
       </Link>
     </div>
   )

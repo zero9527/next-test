@@ -4,10 +4,8 @@ import Layout from '../components/Layout';
 import Markdown from 'react-markdown';
 
 const IndexPage = props => {
-  console.log('index');
 
   useEffect(() => {
-    console.log('load');
     // 路由拦截
     Router.beforePopState(({ url, as, options }) => {
       console.log('url: ', url);
@@ -16,6 +14,7 @@ const IndexPage = props => {
       
       if (as === '/about') {
         console.log('about');
+        return true;
       }
       return false;
     });

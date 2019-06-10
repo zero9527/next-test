@@ -24,6 +24,13 @@ app
       })
     });
 
+    // 匹配URL为 `/detail/:id` 的路由，添加 `params 参数`，然后渲染 `/detail` 对应的 `page/about.js` 文件
+    server.get('/detail/:id', (req, res) => {
+      app.render(req, res, '/detail', {
+        id: req.params.id
+      })
+    });
+
     server.get('*', (req, res) =>{
       // 设置一个资源前缀
       if (req.headers.host === 'my-app.com') {
