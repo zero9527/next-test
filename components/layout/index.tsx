@@ -1,4 +1,4 @@
-import Header from './Header';
+import Header from '../header';
 
 const layoutStyle = {
   margin: 20,
@@ -6,7 +6,7 @@ const layoutStyle = {
   border: '1px solid #ddd'
 };
 
-const Layout = props => {
+const Layout = (props: any) => {
   return (
     <div style={layoutStyle}>
       <Header />

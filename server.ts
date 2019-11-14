@@ -27,21 +27,12 @@ app
   .then(() => {
     const server = express();
 
-    server.get('/p/:id', (req: RouterCallbackParamsReq, res: RouterCallbackParamsRes) => {
-      const actualPage = '/post';
-      const queryParams = { title: req.params.id };
-      
-      app.render(req, res, actualPage, queryParams);
+    // 匹配URL为 `/about` 的路由，然后渲染 `/about` 对应的 `page/about.tsx` 文件
+    server.get('/about', (req: RouterCallbackParamsReq, res: RouterCallbackParamsRes) => {
+      app.render(req, res, '/about')
     });
 
-    // 匹配URL为 `/about/:id` 的路由，添加 `params 参数`，然后渲染 `/about` 对应的 `page/about.js` 文件
-    server.get('/about/:id', (req: RouterCallbackParamsReq, res: RouterCallbackParamsRes) => {
-      app.render(req, res, '/about', {
-        id: req.params.id
-      })
-    });
-
-    // 匹配URL为 `/detail/:id` 的路由，添加 `params 参数`，然后渲染 `/detail` 对应的 `page/detail.js` 文件
+    // 匹配URL为 `/detail/:id` 的路由，添加 `params 参数`，然后渲染 `/detail` 对应的 `page/detail.tsx` 文件
     server.get('/detail/:id', (req: RouterCallbackParamsReq, res: RouterCallbackParamsRes) => {
       app.render(req, res, '/detail', {
         id: req.params.id

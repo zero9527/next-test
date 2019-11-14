@@ -1,6 +1,8 @@
 {
+  "plugins": [
+    ["module-alias", { "src": "./", "expose": "@" }]
+  ],
   "presets": [
     "next/babel",
-    "@zeit/next-typescript/babel"
   ]
 }
