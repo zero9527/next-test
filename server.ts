@@ -42,12 +42,6 @@ function serverRun() {
   });
 
   server.get('*', (req: http.IncomingMessage, res: http.ServerResponse) => {
-    // 设置一个资源前缀
-    if (req.headers.host === 'my-app.com') {
-      app.setAssetPrefix('http://cdn.com/myapp');
-    } else {
-      app.setAssetPrefix('');
-    }
     return handle(req, res);
   });
 

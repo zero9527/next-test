@@ -30,13 +30,6 @@ function serverRun() {
         });
     });
     server.get('*', function (req, res) {
-        // 设置一个资源前缀
-        if (req.headers.host === 'my-app.com') {
-            app.setAssetPrefix('http://cdn.com/myapp');
-        }
-        else {
-            app.setAssetPrefix('');
-        }
         return handle(req, res);
     });
     server.listen(3000, function (err) {
