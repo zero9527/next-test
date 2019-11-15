@@ -1,6 +1,6 @@
 {
   "plugins": [
-    ["module-alias", { "src": "./", "expose": "@" }]
+    ["module-alias", { "src": "./src", "expose": "@" }]
   ],
   "presets": [
     "next/babel",

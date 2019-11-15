@@ -1,7 +1,7 @@
-import React from 'react';
 import { NextComponentType } from "next";
 import { Router } from 'next/router';
 import App, { AppProps } from 'next/app';
+import React from 'react';
 
 interface Props {
   Component: NextComponentType,

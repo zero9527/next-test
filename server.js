@@ -8,7 +8,17 @@ var handle = app.getRequestHandler();
 app
     .prepare()
     .then(function () {
+    serverRun();
+})["catch"](function (ex) {
+    console.log(ex.stack);
+    process.exit(1);
+});
+function serverRun() {
     var server = express();
+    // 匹配URL为 `/` 的路由，然后渲染 `/` 对应的 `page/index.tsx` 文件
+    server.get('/', function (req, res) {
+        app.render(req, res, '/');
+    });
     // 匹配URL为 `/about` 的路由，然后渲染 `/about` 对应的 `page/about.tsx` 文件
     server.get('/about', function (req, res) {
         app.render(req, res, '/about');
@@ -34,7 +44,4 @@ app
             throw err;
         console.log('> Ready on http://localhost:3000');
     });
-})["catch"](function (ex) {
-    console.log(ex.stack);
-    process.exit(1);
-});
+}

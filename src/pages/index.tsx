@@ -2,7 +2,7 @@ import Link from 'next/link';
 import /* Router, */ { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
 import Layout from '@/components/layout';
-import styles from '@/styles/home.scss';
+import styles from '@/styles/index.scss';
 
 /**
  * 首页，路由为 '/'
@@ -29,7 +29,7 @@ const Home = () => {
   return (
     <Layout>
       <h1>{router.query.title}</h1>
-      <img src="/static/images/4k-wallpaper-alps-cold-2283757.jpg" />
+      <img className={styles.img} src="/static/images/4k-wallpaper-alps-cold-2283757.jpg" />
       <div className={styles.content}>
         <p>
           This is our blog post.

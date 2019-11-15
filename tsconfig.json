@@ -23,7 +23,7 @@
     "experimentalDecorators": true,
     "paths": {
       "@/*": [
-        "./*"
+        "./src/*"
       ]
     },
     "forceConsistentCasingInFileNames": true,

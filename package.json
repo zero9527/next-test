@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "node server.js",
-    "dev:tsc": "tsc server.ts",
+    "dev:tsc": "tsc server.ts && yarn dev",
+    "tsc:watch": "tsc -w server.ts",
     "build": "next build",
     "start": "cross-env NODE_ENV=production node server.js"
   },
@@ -15,7 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "next": "^9.0.0",
+    "next": "^v9.1.4-canary.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },

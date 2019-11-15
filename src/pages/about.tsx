@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import React from 'react';
 import Layout from '@/components/layout';
+import styles from '@/styles/about.scss';
 
 const Hello = dynamic(
   () => import('../components/hello-world/index'),
@@ -14,8 +15,8 @@ function About() {
       <Head>
         <title>about</title>
       </Head>
+      <p className={styles.about}>This is the about page</p>
       <Hello />
-      <p>This is the about page</p>
     </Layout>
   );
 }

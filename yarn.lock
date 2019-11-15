@@ -670,7 +670,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
 
-"@babel/plugin-transform-typescript@^7.6.0", "@babel/plugin-transform-typescript@^7.7.2":
+"@babel/plugin-transform-typescript@^7.6.0":
   version "7.7.2"
   resolved "https://registry.npm.taobao.org/@babel/plugin-transform-typescript/download/@babel/plugin-transform-typescript-7.7.2.tgz?cache=0&sync_timestamp=1573083368999&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fplugin-transform-typescript%2Fdownload%2F%40babel%2Fplugin-transform-typescript-7.7.2.tgz#eb9f14c516b5d36f4d6f3a9d7badae6d0fc313d4"
   integrity sha1-658UxRa1029Nbzqde62ubQ/DE9Q=
@@ -761,14 +761,6 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-transform-typescript" "^7.6.0"
-
-"@babel/preset-typescript@^7.0.0":
-  version "7.7.2"
-  resolved "https://registry.npm.taobao.org/@babel/preset-typescript/download/@babel/preset-typescript-7.7.2.tgz#f71c8bba2ae02f11b29dbf7d6a35f47bbe011632"
-  integrity sha1-9xyLuirgLxGynb99ajX0e74BFjI=
-  dependencies:
-    "@babel/helper-plugin-utils" "^7.0.0"
-    "@babel/plugin-transform-typescript" "^7.7.2"
 
 "@babel/runtime-corejs2@7.6.3":
   version "7.6.3"
@@ -1016,13 +1008,6 @@
   dependencies:
     "@zeit/next-css" "1.0.1"
     sass-loader "6.0.6"
-
-"@zeit/next-typescript@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.npm.taobao.org/@zeit/next-typescript/download/@zeit/next-typescript-1.1.1.tgz#0b0ddfbb13ca04cde52ac2718473f1b9c40ba0ee"
-  integrity sha1-Cw3fuxPKBM3lKsJxhHPxucQLoO4=
-  dependencies:
-    "@babel/preset-typescript" "^7.0.0"
 
 abbrev@1:
   version "1.1.1"
@@ -1908,14 +1893,7 @@ content-type@1.0.4, content-type@~1.0.4:
   resolved "https://registry.npm.taobao.org/content-type/download/content-type-1.0.4.tgz#e138cc75e040c727b1966fe5e5f8c9aee256fe3b"
   integrity sha1-4TjMdeBAxyexlm/l5fjJruJW/js=
 
-convert-source-map@1.6.0:
-  version "1.6.0"
-  resolved "https://registry.npm.taobao.org/convert-source-map/download/convert-source-map-1.6.0.tgz?cache=0&sync_timestamp=1573003637425&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fconvert-source-map%2Fdownload%2Fconvert-source-map-1.6.0.tgz#51b537a8c43e0f04dec1993bffcdd504e758ac20"
-  integrity sha1-UbU3qMQ+DwTewZk7/83VBOdYrCA=
-  dependencies:
-    safe-buffer "~5.1.1"
-
-convert-source-map@^1.1.0:
+convert-source-map@1.7.0, convert-source-map@^1.1.0:
   version "1.7.0"
   resolved "https://registry.npm.taobao.org/convert-source-map/download/convert-source-map-1.7.0.tgz?cache=0&sync_timestamp=1573003637425&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fconvert-source-map%2Fdownload%2Fconvert-source-map-1.7.0.tgz#17a2cb882d7f77d3490585e2ce6c524424a3a442"
   integrity sha1-F6LLiC1/d9NJBYXizmxSRCSjpEI=
@@ -4026,10 +4004,10 @@ neo-async@^2.5.0, neo-async@^2.6.1:
   resolved "https://registry.npm.taobao.org/neo-async/download/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha1-rCetpmFn+ohJpq3dg39rGJrSCBw=
 
-next@^9.0.0:
-  version "9.1.3"
-  resolved "https://registry.npm.taobao.org/next/download/next-9.1.3.tgz#9fd833b2e14e3fd566fc4718e7005c3e8dacf3e4"
-  integrity sha1-n9gzsuFOP9Vm/EcY5wBcPo2s8+Q=
+next@^v9.1.4-canary.4:
+  version "9.1.4-canary.4"
+  resolved "https://registry.npm.taobao.org/next/download/next-9.1.4-canary.4.tgz#dca6ca35317a1374e598ba7df3e8889eb42aad15"
+  integrity sha1-3KbKNTF6E3TlmLp98+iInrQqrRU=
   dependencies:
     "@ampproject/toolbox-optimizer" "1.1.1"
     "@babel/core" "7.6.4"
@@ -4077,7 +4055,7 @@ next@^9.0.0:
     mkdirp "0.5.1"
     node-fetch "2.6.0"
     ora "3.4.0"
-    path-to-regexp "2.1.0"
+    path-to-regexp "3.1.0"
     pnp-webpack-plugin "1.5.0"
     postcss-flexbugs-fixes "4.1.0"
     postcss-loader "3.0.0"
@@ -4092,7 +4070,7 @@ next@^9.0.0:
     string-hash "1.1.3"
     strip-ansi "5.2.0"
     style-loader "1.0.0"
-    styled-jsx "3.2.2"
+    styled-jsx "3.2.4"
     terser "4.0.0"
     unfetch "4.1.0"
     url "0.11.0"
@@ -4573,10 +4551,10 @@ path-to-regexp@0.1.7:
   resolved "https://registry.npm.taobao.org/path-to-regexp/download/path-to-regexp-0.1.7.tgz#df604178005f522f15eb4490e7247a1bfaa67f8c"
   integrity sha1-32BBeABfUi8V60SQ5yR6G/qmf4w=
 
-path-to-regexp@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npm.taobao.org/path-to-regexp/download/path-to-regexp-2.1.0.tgz#7e30f9f5b134bd6a28ffc2e3ef1e47075ac5259b"
-  integrity sha1-fjD59bE0vWoo/8Lj7x5HB1rFJZs=
+path-to-regexp@3.1.0:
+  version "3.1.0"
+  resolved "https://registry.npm.taobao.org/path-to-regexp/download/path-to-regexp-3.1.0.tgz#f45a9cc4dc6331ae8f131e0ce4fde8607f802367"
+  integrity sha1-9FqcxNxjMa6PEx4M5P3oYH+AI2c=
 
 path-type@^1.0.0:
   version "1.1.0"
@@ -6055,14 +6033,14 @@ style-loader@1.0.0:
     loader-utils "^1.2.3"
     schema-utils "^2.0.1"
 
-styled-jsx@3.2.2:
-  version "3.2.2"
-  resolved "https://registry.npm.taobao.org/styled-jsx/download/styled-jsx-3.2.2.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fstyled-jsx%2Fdownload%2Fstyled-jsx-3.2.2.tgz#03d02d26725195d17b6a979eb8d7c34761a16bf8"
-  integrity sha1-A9AtJnJRldF7apeeuNfDR2Gha/g=
+styled-jsx@3.2.4:
+  version "3.2.4"
+  resolved "https://registry.npm.taobao.org/styled-jsx/download/styled-jsx-3.2.4.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fstyled-jsx%2Fdownload%2Fstyled-jsx-3.2.4.tgz#cbcdedcfb81d717fd355c4a0d8443f8e74527b60"
+  integrity sha1-y83tz7gdcX/TVcSg2EQ/jnRSe2A=
   dependencies:
     babel-plugin-syntax-jsx "6.18.0"
     babel-types "6.26.0"
-    convert-source-map "1.6.0"
+    convert-source-map "1.7.0"
     loader-utils "1.2.3"
     source-map "0.7.3"
     string-hash "1.1.3"
