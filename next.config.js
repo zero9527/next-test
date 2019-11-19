@@ -3,6 +3,7 @@ const {
   PHASE_PRODUCTION_BUILD, 
   PHASE_PRODUCTION_SERVER 
 } = require('next/constants');
+const withCSS = require('@zeit/next-css')
 const withSass = require('@zeit/next-sass');
 const configCommon = require('./config/config.common.js');
 const configDev = require('./config/config.dev.js');
@@ -12,10 +13,12 @@ module.exports = (phase, { defaultConfig }) => {
   
   // development
   if (phase === PHASE_DEVELOPMENT_SERVER) {
-    return withSass({
-      ...configCommon,
-      ...configDev
-    });
+    return withCSS(
+      withSass({
+        ...configCommon,
+        ...configDev
+      })
+    );
   }
 
   // pruduction
@@ -23,15 +26,19 @@ module.exports = (phase, { defaultConfig }) => {
     phase === PHASE_PRODUCTION_BUILD ||
     phase === PHASE_PRODUCTION_SERVER
   ) {
-    return withSass({
-      ...configCommon,
-      ...configProd
-    });
+    return withCSS(
+      withSass({
+        ...configCommon,
+        ...configProd
+      })
+    );
   }
   
   // 其他
-  return withSass({
-    ...configCommon,
-    ...configProd
-  });
+  return withCSS(
+    withSass({
+      ...configCommon,
+      ...configProd
+    })
+  );
 };

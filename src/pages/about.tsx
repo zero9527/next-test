@@ -9,7 +9,16 @@ const Hello = dynamic(
   { loading: () => <p>...</p> }
 );
 
+const { useEffect } = React;
+
 function About() {
+  useEffect(() => {
+    fetch('/userInfo').then(res => res.json())
+    .then(res => {
+      console.log('fetch: ', res);
+    })
+  }, []);
+
   return (
     <Layout>
       <Head>

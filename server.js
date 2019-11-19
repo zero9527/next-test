@@ -15,6 +15,14 @@ app
 });
 function serverRun() {
     var server = express();
+    // 接口
+    // const user = require('./server/controllers/user');
+    // server.use(user.api, user.router);
+    var controllers = require('./server/controller');
+    controllers.forEach(function (controller) {
+        server.use(controller.api, controller.router);
+    });
+    // server.use(user.api, user.router);
     // 匹配URL为 `/` 的路由，然后渲染 `/` 对应的 `page/index.tsx` 文件
     server.get('/', function (req, res) {
         app.render(req, res, '/');

@@ -9,6 +9,10 @@ const handle = app.getRequestHandler();
 interface Req extends http.IncomingMessage {
   params?: any,
 }
+interface Controller {
+  api: string,
+  router: any
+}
 
 app
   .prepare()
@@ -23,6 +27,14 @@ app
   
 function serverRun() {
   const server = express();
+  // 接口
+  // const user = require('./server/controllers/user');
+  // server.use(user.api, user.router);
+  const controllers = require('./server/controller');
+  controllers.forEach((controller: Controller) => {
+    server.use(controller.api, controller.router)
+  })
+  // server.use(user.api, user.router);
 
   // 匹配URL为 `/` 的路由，然后渲染 `/` 对应的 `page/index.tsx` 文件
   server.get('/', (req: Req, res: http.ServerResponse) => {
