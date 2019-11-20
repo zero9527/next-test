@@ -1,13 +1,12 @@
 ._error-wrapper {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  position: relative;
   padding: 10px;
   text-align: center;
+  color: #666;
 
   .title {
-    font-size: 20px;
+    margin-bottom: 10px;
+    font-size: 30px;
   }
-  // .content {}
 }

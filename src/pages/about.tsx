@@ -13,7 +13,7 @@ const { useEffect } = React;
 
 function About() {
   useEffect(() => {
-    fetch('/userInfo').then(res => res.json())
+    fetch('/user/userInfo/2').then(res => res.json())
     .then(res => {
       console.log('fetch: ', res);
     })

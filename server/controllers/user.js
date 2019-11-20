@@ -1,8 +1,8 @@
-const express = require('express');
-// import * as http from "http";
-const router = express.Router();
+const Router = require('express').Router();
 
-router.get('/', (req, res) => {
+Router.get('/userInfo/:id', (req, res) => {
+  console.log('id: ', req.params.id);
+  
   res.send({
     status: 200,
     data: {
@@ -14,7 +14,4 @@ router.get('/', (req, res) => {
   });
 });
 
-module.exports = {
-  api: '/userInfo',
-  router: router
-};
+module.exports = Router;
