@@ -2,9 +2,9 @@ import * as mobx from 'mobx';
 
 // 禁止在 action 外直接修改 state 
 mobx.configure({ enforceActions: "observed"});
-const { observable, action, computed, runInAction } = mobx;
+const { observable, action, computed, runInAction, autorun } = mobx;
 
-const isBroswer = process.browser;
+const isBroswer: boolean = process.browser;
 
 /**
  * 所以缓存这里先判断一下是否浏览器，然后再去使用浏览器 API( `sessionStorage` )；
@@ -63,13 +63,11 @@ class Home {
 
 const homeStore = new Home();
 
-mobx.spy((event) => {
-  // 数据变化后触发，数据缓存
-  if (event.type === 'reaction') {
-    const obj = mobx.toJS(homeStore);
-    isBroswer && window.sessionStorage.setItem('homeStore', JSON.stringify(obj));
-  }
-})
+// 数据变化后触发，数据缓存
+autorun(() => {
+  const obj = mobx.toJS(homeStore);
+  isBroswer && window.sessionStorage.setItem('homeStore', JSON.stringify(obj));
+});
 
 export type homeStoreType = typeof homeStore;
 export default homeStore;

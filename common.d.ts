@@ -10,3 +10,7 @@ declare module '*.scss' {
   const content: any;
   export default content;
 }
+
+interface process {
+  browser: boolean
+}
