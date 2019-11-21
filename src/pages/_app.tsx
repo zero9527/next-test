@@ -2,6 +2,8 @@ import { NextComponentType } from "next";
 import { Router } from 'next/router';
 import App, { AppProps } from 'next/app';
 import React from 'react';
+import { Provider } from 'mobx-react';
+import store from '../store';
 
 interface Props {
   Component: NextComponentType,
@@ -31,7 +33,9 @@ class myApp extends App<Props> {
 
     return (
       <React.Fragment>
-        <Component {...pageProps} />
+        <Provider {...store}>
+          <Component {...pageProps} />
+        </Provider>
       </React.Fragment>
     );
   }

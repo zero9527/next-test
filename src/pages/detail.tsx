@@ -1,23 +1,16 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import React, { useEffect } from 'react';
+import React from 'react';
+import { inject, observer } from 'mobx-react';
+import { homeStoreType } from '@/store/home';
+import { Button, Row } from 'antd';
 import Layout from '@/components/layout';
 import styles from '@/styles/detail.scss';
 
-function Detail() {
+function Detail(props: any) {
   const router = useRouter();
+  const homeStore: homeStoreType = props.homeStore;
 
-  useEffect(() => {
-    // console.log('detail mount!');
-    // console.log('router: ', props.router);
-    // 正常路由跳转，在about页面获取路由信息的时候，id为a11，
-    // 刷新页面则id为asss，所以尽量二者一致，避免不必要的问题
-    // setTimeout(() => props.router.push('/about?id=a11', '/about/asss'), 1000);
-    return () => {
-      // console.log('detail unmount!');
-    }
-  }, []);
-  
   return (
     <Layout>
       <Head>
@@ -25,6 +18,12 @@ function Detail() {
       </Head>
       <p className={styles.detail}>This is the detail page!</p>
       id: { router.query.id }
+      <Row>
+        count: { homeStore.count }
+      </Row>
+      <Button 
+        onClick={() => homeStore.setCount(homeStore.count+1)}
+      >count++</Button>
     </Layout>
   );
 }
@@ -35,13 +34,15 @@ Detail.getInitialProps = async function(context: any) {
    * 如果是其他路由跳转过来没有刷新页面的话，context.req 为假，在浏览器控制台打印,
    * 此时 document.title 是 跳转之前的页面 title；
    */
-  console.log('title: ', context.req ? 'server' : document.title);
-
-  // console.log('context: ', context);
+  console.log('req: ', context.req);
 
   return {
-    data: 'detail'
+    // data: 'detail'
   };
 }
 
-export default Detail;
+const DetailWithMobx = inject('homeStore')(
+  observer(Detail)
+);
+
+export default DetailWithMobx;

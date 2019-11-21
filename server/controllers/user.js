@@ -1,7 +1,7 @@
 const Router = require('express').Router();
 
 Router.get('/userInfo/:id', (req, res) => {
-  console.log('id: ', req.params.id);
+  console.log('/userInfo/:id - id: ', req.params.id);
   
   res.send({
     status: 200,
