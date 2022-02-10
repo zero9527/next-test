@@ -39,7 +39,7 @@
     "isomorphic-unfetch": "^3.0.0",
     "next-compose-plugins": "^2.2.0",
     "next-transpile-modules": "^2.3.1",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "typescript": "^3.7.2"
   },
   "browserslist": [
